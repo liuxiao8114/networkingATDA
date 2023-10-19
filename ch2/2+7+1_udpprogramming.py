@@ -1,5 +1,6 @@
 ## Client
 from socket import *
+## BUFFER_SIZE = 2048
 serverName = 'hostname'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
@@ -16,6 +17,6 @@ serverSocket = socket(AF_INET, SOCK_DGRAM)
 serverSocket.bind(('', serverPort))
 print('The server is ready to receive')
 while True:
-    message, clientAddress = serverSocket.recv(2048)
+    message, clientAddress = serverSocket.recvfrom(2048)
     capitalizedSentence = message.decode().upper()
     serverSocket.sendto(capitalizedSentence.encode(), clientAddress)

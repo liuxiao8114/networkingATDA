@@ -1,4 +1,4 @@
-### 1.2.1 
+### 1.2.1
   DSL:   digital subscriber line
   DSLAM: digital subscriber line access multiplexer
   CMTS : cable modem termination system
@@ -41,7 +41,8 @@ its own network, a content provider not only reduces its payments to upper-tier 
 but also has greater control of how its services are ultimately delivered to end users.
 Google’s network infrastructure is described in greater detail in Section 2.6.
 
-### 1.4
+## 1.4 Delay, Loss and Throughput in Packet-Switched Networks
+### 1.4.1 Overview of Delay in Packet-Switched Networks
 #### Processing Delay
 Examine the packet's header and decide where to direct the packet.
 
@@ -49,11 +50,19 @@ Examine the packet's header and decide where to direct the packet.
 The
 
 #### Transmission Delay
-It is the amount of time required to push all of packet's bits into the link.
+Donote:
+  L: the length of the packet by bits.
+  R: the transmission rate of the link from router A to router B by bits/sec
+The transmission delay is L/R. It is the amount of time required to push all of packet's bits into the link.
+
 #### Propagation Delay
 It is the function between the packet length and the transmission rate of the link.
 the distance of the two routers and the propagation speed of the link.
 
+### 1.4.2 Queuing Delay and Packet Loss
 
-the rate at which traffic arrive
-#### 1.4.4 Throughput in Computer Networks
+
+### 1.4.3 End-to-End Delay
+
+
+### 1.4.4 Throughput in Computer Networks

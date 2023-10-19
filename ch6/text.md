@@ -1,4 +1,15 @@
-## 6.6 
+## 6.1 Introduction to the Link Layer
++ node
++ link
+
+###  6.1.1 The Services Provided by the Link Layer
++ Framing
++ Link access
+  A medium access control(MAC) protocol specifies the rules by which a frame is transmitted onto the link.
++ Reliable delivery
++
+
+## 6.6
 40 simultaneous flows
 100 Gpbs extern
 
@@ -9,13 +20,13 @@ including multiple paths from source to destination and the increased capacity (
 to multipath routing) and reliability (due to multiple switch- and link-disjoint paths
 between any two hosts).
 The data center interconnection network is comprised of a large number of smallsized
-switches. For example, 
+switches. For example,
 
-in Google’s Jupiter datacenter fabric, one configuration has 
-48 links between the ToR switch and its servers below, and connections up to 8 tier-2 switches; 
-a tier-2 switch has links to 256 ToR switches and links up to 16 tier-1 switches. 
+in Google’s Jupiter datacenter fabric, one configuration has
+48 links between the ToR switch and its servers below, and connections up to 8 tier-2 switches;
+a tier-2 switch has links to 256 ToR switches and links up to 16 tier-1 switches.
 
-In Facebook’s data center architecture, 
+In Facebook’s data center architecture,
 each ToR switch connects up to four different tier-2 switches (each in a different “spline plane”), and each tier-2 switch connects
 up to 4 of the 48 tier-1 switches in its spline plane; there are four spline planes. Tier-1 and
 tier-2 switches connect down to a larger, scalable number of tier-2 or ToR switches, respectively,
@@ -26,8 +37,8 @@ are being built in-house from commodity, off-the-shelf, merchant silicon [Greenb
 DHCP request from Bob's PC
 
 ### 6.7.1 Getting Started: DHCP, UDP, IP, and Ethernet
-1. send DHCP request, through UDP and IP 
--> UDP Segment: 
+1. send DHCP request, through UDP and IP
+-> UDP Segment:
     src: 0.0.0.0, src port: 68(DHCP client), target: ff.ff.ff.ff, target port: 67(DHCP server),
 -> IP Datagram:
     version: 4, top service: UDP, ttl:, src: 0.0.0.0, target: ff.ff.ff.ff, data
@@ -52,7 +63,7 @@ The DHCP server creates a DHCP ACK message contains
   + the subnet block(68.85.2.0/24) (equivalently, the “network mask”).
 
 6. Ethernet frame sent by router to the switch. The switch forward a frame addressed to 00:16:D3:23:68:8A only to the output port leading to Bob’s laptop.
-7. 
+7.
 
 ### 6.7.2 Still Getting Started: DNS and ARP
 8. The UDP segment is then placed within an IP datagram with an IP destination address of 68.87.71.226 (the address of the DNS server returned in the DHCP ACK in step 5) and a source IP address of 68.85.2.101.

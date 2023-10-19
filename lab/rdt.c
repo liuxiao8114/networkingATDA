@@ -76,7 +76,7 @@ char checkChecksum(struct pkt *packet) {
 
   for(int i = 0; i < DATA_LEN; i++)
     sum += packet->payload[i];
-  
+
   return sum == -1;
 }
 
@@ -97,9 +97,12 @@ A_output(message) struct msg message;
   pktptr->checksum = generateChecksum(pktptr);
   currentApkt = pktptr;
 
-  // sender event 2: handle timer out & retransmit  
+  // sender event 2: handle timer out & retransmit
   starttimer(A, estimatedTime);
-  
+
+  // start timer
+  // 
+
   tolayer3(A, *pktptr);
 }
 
@@ -118,7 +121,7 @@ A_input(packet) struct pkt packet;
     struct msg *message = malloc(sizeof(struct msg));
     tolayer5(A, *message);
     currentApkt = NULL;
-  }  
+  }
 }
 
 /* called when A's timer goes off */
