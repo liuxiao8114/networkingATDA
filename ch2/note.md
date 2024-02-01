@@ -18,10 +18,15 @@ Why web Caching?
   + reduce the response time for a client request, particularly if the b
   + reduce the traffic on an institution's access to the internet
 
-
 ### 2.2.6 HTTP/2
 #### HTTP/2 Framing
 #### Response Message Prioritization and Server Pushing
 The server can send multiple responses for a single client request.
 
 ## 2.5 DNS
+When a host connects to an ISP, the ISP provides the host with the IP addresses of one or more of its local DNS servers
+
+the sample:
+the host cse.nyu.edu desires gaia.cs.umass.edu
+NYU’s local DNS server for cse.nyu.edu is called dns.nyu.edu
+an authoritative DNS server for gaia.cs.umass.edu is called dns.umass.edu
